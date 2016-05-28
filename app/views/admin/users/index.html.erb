@@ -1,0 +1,15 @@
+
+        <% @users.each do |user| %>
+         <div>
+                <ul>
+                    <li><h3><strong> <%= user.email %> </strong></h3></li>
+                    <li> <%= user.firstname %> </li>
+                    <li> <%= user.lastname %> </li>
+                    <li>Admin? <%= user.is_admin  %> </li>
+                    <%= link_to "delete", admin_user_path(user), method: :delete %>
+                </ul>
+        </div>
+        <% end %> 
+
+        <%= link_to "create", new_admin_user_path %>
+
